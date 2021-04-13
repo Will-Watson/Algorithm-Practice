@@ -34,3 +34,20 @@ const uniquePaths = (m, n, row = 0, col = 0) => {
     return uniquePaths(m, n, row + 1, col) + uniquePaths(m, n, row, col + 1);
   }
 };
+
+//using a matrix..
+
+const _uniquePaths = (m, n) => {
+  const matrix = Array(m);
+
+  for (let row = 0; row < m; row++) {
+    matrix[row] = Array(n).fill(1);
+  }
+
+  for (let row = 1; row < m; row++) {
+    for (let col = 1; col < n; col++) {
+      matrix[row][col] = matrix[row - 1][col] + matrix[row][col - 1];
+    }
+  }
+  return matrix[m - 1][n - 1];
+};
