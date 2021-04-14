@@ -25,10 +25,10 @@ const same = (arr1, arr2) => {
     freqCounter2[val] = (freqCounter2[val] || 0) + 1;
   }
   for (let key in freqCounter1) {
-    if (!(key * 2 in freqCounter2)) {
+    if (!(key ** 2 in freqCounter2)) {
       return false;
     }
-    if (freqCounter2[key * 2] !== freqCounter1[key]) {
+    if (freqCounter2[key ** 2] !== freqCounter1[key]) {
       return false;
     }
   }
