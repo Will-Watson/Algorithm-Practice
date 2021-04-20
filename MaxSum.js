@@ -33,3 +33,29 @@ const maxSum = (arr, num) => {
   }
   return max;
 };
+
+//sliding window solution (optimized)
+
+const _maxSum = (arr, num) => {
+  let max = 0;
+  let temp = 0;
+  //initialize max and temp variables with dummy number.
+  if (num > arr.length) {
+    return null;
+  }
+  //same edge case as before. If num is greater than the length of the array we return null.
+  for (let i = 0; i < num; i++) {
+    max += arr[i];
+    //here we're counting the first num amount of values and assigning it to max.
+  }
+  temp = max;
+  //assigning the same value to temp for future comparison
+  for (let j = num; j < arr.length - num + 1; j++) {
+    //starting the loop after our initial value.
+    temp = temp - arr[j - num] + arr[j];
+    //the sliding window. Instead of continuously adding all the numbers together we subtract the previous number now excluded from the window and add the following number now included in the window
+    max = Math.max(max, temp);
+    //reassigning max to be the larger of the two numbers (maxSum)
+  }
+  return max;
+};
