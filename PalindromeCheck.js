@@ -27,3 +27,19 @@ const isPalindrome = (str) => {
   }
   return true;
 };
+
+//recursive solution
+
+const _isPalindrome = (str) => {
+  str = str.toLowerCase();
+  if (str <= 1) {
+    return true;
+  }
+  let first = str[0];
+  let last = str[str.length - 1];
+  if (first !== last) {
+    return false;
+  } else {
+    return _isPalindrome(str.slice(1, -1));
+  }
+};
