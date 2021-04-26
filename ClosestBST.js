@@ -47,3 +47,31 @@ const findClosestValueBST = (tree, value) => {
 
   return findClosestHelper(tree, target, (closest = Infinity));
 };
+
+//iterative solution (optimized)
+
+const iterativeFindClosestValueBST = (tree, target) => {
+  const interativeHelper = (tree, target, closest) => {
+    let currentNode = tree;
+
+    while (currentNode) {
+      if (Math.abs(target - closest) > Math.abs(target - currentNode.value)) {
+        closest = currentNode.value;
+      }
+
+      if (currentNode.value === target) {
+        return target;
+      }
+
+      if (target < currentNode.value) {
+        currentNode = currentNode.left;
+      } else {
+        currentNode = currentNode.right;
+      }
+    }
+
+    return closest;
+  };
+
+  return interativeHelper(tree, target, (closest = Infinity));
+};
