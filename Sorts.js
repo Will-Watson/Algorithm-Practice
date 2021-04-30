@@ -41,3 +41,25 @@ const bubbleSort = (arr) => {
   }
   return arr;
 };
+
+//optimized solution
+
+const _bubbleSort = (arr) => {
+  let noSwaps;
+  for (let i = arr.length; i > 0; i--) {
+    noSwaps = true;
+    for (let j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        //swap
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        noSwaps = false;
+      }
+    }
+    if (noSwaps) break;
+  }
+  return arr;
+};
+
+//noSwaps is checking to see if the arr is already sorted and stopping the code if it is in order to shorten run time, time complexity.
