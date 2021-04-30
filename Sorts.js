@@ -68,9 +68,6 @@ const _bubbleSort = (arr) => {
 
 //selection sort, like bubble sort compares two values but first loops through to find the minimum value then switches that value to the front. Incrementing the starting point as we go, finding the smallest value and switching it to the front
 
-//this algo is great for data thats almost sorted already
-//super slow otherwise
-
 /*
 
 [5, 3, 4, 1, 2]
