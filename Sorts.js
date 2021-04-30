@@ -106,3 +106,37 @@ const selectionSort = (arr) => {
   }
   return arr;
 };
+
+//insertion sort
+
+//insertion sort builds up the first half of the array by inserting the following element into the right place
+
+/*
+
+[4, 2, 3, 1, 5]
+ ^  ^
+[2, 4, 3, 1, 5]
+   ^   ^
+[2, 3, 4, 1, 5]
+^         ^
+[1, 2, 3, 4, 5]
+
+
+-start by picking the second element in the array
+-now compare the second element with the one before it and swap if necessary
+-continue to the enxt element and if it is in the incorrect order, iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
+-repeat until the array is sorted.
+
+*/
+
+const insertionSort = (arr) => {
+  for (let i = 1; i < arr.length; i++) {
+    let currVal = arr[i];
+    for (var j = i - 1; j >= 0 && arr[j] > currVal; j--) {
+      arr[j + 1] = arr[j];
+    }
+    //needed var here for scoping reasons
+    arr[j + 1] = currVal;
+  }
+  return arr;
+};
