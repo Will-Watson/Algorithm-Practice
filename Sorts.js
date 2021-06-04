@@ -278,3 +278,11 @@ Merge Sort - O(n log(n))
 
 
 */
+
+//Radix Sort
+//sorting algorithm without making comparisons that works on numbers
+//exploits the fact that a number is larger if it has more digits
+//starts by looking at the first digit of each number (ones)
+//sorts the numbers into 'buckets' based on this
+//then numbers are sorted by the next number to the left (tens)
+//and so on...
