@@ -325,3 +325,38 @@ Math.floor(2.626) = 2
 3 is the answer...
 
 */
+
+//mostDigits helper.. runs digit count on each number and returns the amount
+
+const mostDigits = (nums) => {
+  let max = 0;
+  for (let i = 0; i < nums.length; i++) {
+    max = Math.max(max, digitCount(nums[i]));
+  }
+  return max;
+};
+
+//actual Radix sort
+
+const radixSort = (nums) => {
+  let maxDigitCount = mostDigits(nums);
+  //get the max digit count
+  //also to know how many times we have to loop initially
+  for (let k = 0; k < maxDigitCount; k++) {
+    //start a loop based on the max digit count
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+    //create the 'buckets'. In this case an array of ten empty arrays (0 through 9)
+    for (let i = 0; i < nums.length; i++) {
+      //loop through the numbers
+      let digit = getDigit(nums[i], k);
+      //as k increases with each loop so does the place of the number we're trying to grab
+      //digit grabs that number
+      digitBuckets[digit].push(nums[i]);
+      //push each number into their respective buckets
+    }
+    nums = [].concat(...digitBuckets);
+    //nums is now reassigned to the concatentation of all the digitbuckets arguments
+    //the spread operator is used to combine all the arguments without it we would have an array of sub arrays returned as nums
+  }
+  return nums;
+};
