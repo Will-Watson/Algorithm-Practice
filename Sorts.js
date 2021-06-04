@@ -286,3 +286,20 @@ Merge Sort - O(n log(n))
 //sorts the numbers into 'buckets' based on this
 //then numbers are sorted by the next number to the left (tens)
 //and so on...
+
+//radix sort get digit helper function
+
+const getDigit = (num, i) => {
+  return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+};
+
+/*
+
+getDigit(7323, 2) ---> expecting three as its in the hundreds place or 2nd index from the right (0, 1, 2)
+
+7323 / 100 = 73.23
+Math.floor(73.23) = 73
+73 % 10 = 3
+3 = our answer.. the digit in the hundreds place
+
+*/
