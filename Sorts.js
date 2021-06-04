@@ -184,3 +184,15 @@ const merge = (arr1, arr2) => {
 
   return results;
 };
+
+const mergeSort = (arr) => {
+  //base case, means all the arrays have been split all the way down
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  return merge(left, right);
+};
