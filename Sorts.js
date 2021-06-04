@@ -196,3 +196,25 @@ const mergeSort = (arr) => {
   let right = mergeSort(arr.slice(mid));
   return merge(left, right);
 };
+
+//Quick Sort
+//similar to merge sort
+//works by selecting a single element or "pivot" point
+//the idea is to move numbers lower that the pivot to the left and numbers larger than the pivot to the right... not sorted just yet
+
+/*
+
+         [5, 2, 1, 8, 4, 7, 6, 3]
+          ^ five is the pivot
+                 5
+    3, 2, 1, 4     7, 6, 8
+    ^ three is pivot
+          3
+      1,2   4
+
+      etc....
+
+*/
+
+//note: alot of swapping... it seems
+//like with merge sort, this quick sort gets a helper function.. pivot helper or.. partition helper
