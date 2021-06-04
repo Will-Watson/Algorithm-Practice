@@ -223,21 +223,31 @@ const mergeSort = (arr) => {
 //pivot takes three arguments. startIdx, endIdx, array
 
 const pivot = (arr, start = 0, end = arr.length + 1) => {
+  //swap function
   const swap = (array, i, j) => {
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   };
-
+  //partiion or pivot
   let partition = arr[start];
+  //swapIdx initialized at the start point
   let swapIdx = start;
 
   for (let i = start + 1; i < arr.length; i++) {
+    //loop starting point plus 1 because theres no point in comparing the number to itself
     if (partition > arr[i]) {
+      //partition in this case starting at index 0
+      //if array value is less than partition
       swapIdx++;
+      //increase the swapIdx
       swap(arr, swapIdx, i);
+      //then swap the value currently at i (less than partition) and the new swap idx
+      //effectivlely putting the lesser values to the left of the partition
     }
   }
   swap(arr, start, swapIdx);
+  //once the loop has run its course its time to move the partition to the middle
+  //swaping the start or partition in this case with the new swapIdx
   return swapIdx;
 };
