@@ -218,3 +218,26 @@ const mergeSort = (arr) => {
 
 //note: alot of swapping... it seems
 //like with merge sort, this quick sort gets a helper function.. pivot helper or.. partition helper
+
+//best choice for a pivot is the median or the middle value.. this will highly effect speed
+//pivot takes three arguments. startIdx, endIdx, array
+
+const pivot = (arr, start = 0, end = arr.length + 1) => {
+  const swap = (array, i, j) => {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  };
+
+  let partition = arr[start];
+  let swapIdx = start;
+
+  for (let i = start + 1; i < arr.length; i++) {
+    if (partition > arr[i]) {
+      swapIdx++;
+      swap(arr, swapIdx, i);
+    }
+  }
+  swap(arr, start, swapIdx);
+  return swapIdx;
+};
