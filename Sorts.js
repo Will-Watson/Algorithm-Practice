@@ -303,3 +303,25 @@ Math.floor(73.23) = 73
 3 = our answer.. the digit in the hundreds place
 
 */
+
+//second helper needs to find the largest amount of digits a single number has so that we know how many times the function has to run
+
+const digitCount = (num) => {
+  if (num === 0) {
+    return 1;
+  }
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+};
+
+/*
+
+log10 ---> ten to what power??
+
+digitCount(423)
+
+Math.log10(423) = 2.626
+Math.floor(2.626) = 2
+2 + 1 = 3
+3 is the answer...
+
+*/
