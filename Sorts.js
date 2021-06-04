@@ -251,3 +251,14 @@ const pivot = (arr, start = 0, end = arr.length + 1) => {
   //swaping the start or partition in this case with the new swapIdx
   return swapIdx;
 };
+
+const quickSort = (arr, left = 0, right = arr.length - 1) => {
+  if (left < right) {
+    let pivotIdx = pivot(arr, left, right);
+    //left
+    quickSort(arr, left, pivotIdx - 1);
+    //right
+    quickSort(arr, pivotIdx + 1, right);
+  }
+  return arr;
+};
