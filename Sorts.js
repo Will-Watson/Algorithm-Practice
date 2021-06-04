@@ -360,3 +360,7 @@ const radixSort = (nums) => {
   }
   return nums;
 };
+
+//Radix Sort Complexities
+//Time - O(nk) where k is the length of the numbers
+//Space - O(n + k)
