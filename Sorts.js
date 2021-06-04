@@ -137,3 +137,50 @@ const insertionSort = (arr) => {
   }
   return arr;
 };
+
+// ------------------INTERMEDIATE SORTS----------------------------
+
+//Merge Sort
+//combo of merging and sorting
+//chops up long arrays into smaller sub arrays (divide and conquer)
+
+/*
+
+             [8, 3, 5, 4, 7, 6, 1, 2]
+      [8, 3, 5, 4]           [7, 6, 1, 2]
+    [8, 3]    [5, 4]        [7, 6]   [1, 2]
+[8]   [3]     [5]    [4]   [7]   [6]    [1]  [2]
+
+*/
+
+//function to merge two sorted arrays
+
+const merge = (arr1, arr2) => {
+  const results = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr2[j] > arr1[i]) {
+      results.push(arr1[i]);
+      i++;
+    } else {
+      results.push(arr2[j]);
+      j++;
+    }
+  }
+
+  //whatever is left over, because its sorted is pushed into the results array
+
+  while (i < arr1.length) {
+    results.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    results.push(arr2[j]);
+    j++;
+  }
+
+  return results;
+};
