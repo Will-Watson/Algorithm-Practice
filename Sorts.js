@@ -362,5 +362,6 @@ const radixSort = (nums) => {
 };
 
 //Radix Sort Complexities
-//Time - O(nk) where k is the length of the numbers
+//Time - O(nk)
+// where n is the lenght of the array and k is the length of the largest number (number of digits)
 //Space - O(n + k)
