@@ -262,3 +262,19 @@ const quickSort = (arr, left = 0, right = arr.length - 1) => {
   }
   return arr;
 };
+
+/*
+
+-----------------COMPARISON SORT BREAKDOWN----------------
+
+Average Time Complexities
+
+Bubble Sort - O(n^2)
+Insertion Sort - O(n^2)
+Selection Sort - O(n^2)
+
+Quick Sort - O(n log(n))
+Merge Sort - O(n log(n))
+
+
+*/
