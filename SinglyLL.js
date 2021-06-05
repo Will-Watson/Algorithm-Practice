@@ -101,6 +101,25 @@ class SinglyLinkedList {
     }
     return false;
   }
+
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false;
+    if (idx === this.length) {
+      this.push(val);
+      return true;
+    }
+    if (idx === 0) {
+      this.unshift(val);
+      return true;
+    }
+    let newNode = new Node(val);
+    let prev = this.get(idx - 1);
+    let temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
 }
 
 let list = new SinglyLinkedList();
