@@ -1,11 +1,11 @@
 //quick crash course refresher on singly linked lists
 
-// class Node {
-//   constructor(val){
-//     this.val = val;
-//     this.next = null;
-//   }
-// }
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
 
 // let first = new Node('Hi');
 // first.next = new Node('There');
@@ -132,6 +132,33 @@ class SinglyLinkedList {
     this.length--;
 
     return removed;
+  }
+
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
+
+  reverse() {
+    //swap head and tail
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let prev = null;
+    let next;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 }
 
