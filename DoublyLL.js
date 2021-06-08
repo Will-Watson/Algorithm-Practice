@@ -96,4 +96,13 @@ class DoublyLinkedList {
     return current;
     //optimized to go from either the front or the end of the LL based on which index is being asked for
   }
+
+  set(idx, val) {
+    let foundNode = this.get(idx);
+    if (foundNode !== null) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
 }
