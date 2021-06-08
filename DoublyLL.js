@@ -29,4 +29,19 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  pop() {
+    if (!this.tail) return undefined;
+    let oldTail = this.tail;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = oldTail.prev;
+      this.tail.next = null;
+      oldTail.prev = null; //make sure to sever back tie as well as the front. Popped node will still have all the previous nodes if you dont
+    }
+    this.length--;
+    return oldTail;
+  }
 }
