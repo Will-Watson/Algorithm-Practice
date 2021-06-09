@@ -105,4 +105,22 @@ class DoublyLinkedList {
     }
     return false;
   }
+
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false;
+    if (idx === 0) this.unshift(val);
+    if (idx === this.length) this.push(val);
+
+    let newNode = new Node(val);
+    let beforeNode = this.get(idx - 1);
+    let afterNode = beforeNode.next;
+
+    beforeNode.next = newNode;
+    newNode.prev = beforeNode;
+    newNode.next = afterNode;
+    afterNode.prev = newNode;
+
+    this.length++;
+    return true;
+  }
 }
