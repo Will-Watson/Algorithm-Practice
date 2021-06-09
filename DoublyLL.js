@@ -108,8 +108,8 @@ class DoublyLinkedList {
 
   insert(idx, val) {
     if (idx < 0 || idx > this.length) return false;
-    if (idx === 0) this.unshift(val);
-    if (idx === this.length) this.push(val);
+    if (idx === 0) return !!this.unshift(val);
+    if (idx === this.length) return !!this.push(val);
 
     let newNode = new Node(val);
     let beforeNode = this.get(idx - 1);
