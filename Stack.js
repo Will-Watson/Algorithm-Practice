@@ -65,3 +65,16 @@ class Stack {
     return temp.val;
   }
 }
+
+//push and pop here are adding and removing from the beginning of the list
+//the reason for this is as we know that push and pop traditionally pull fromt the end of the list
+//here we save time doing it from the front as we dont have to traverse the entire 'LL' to get to the end
+
+/*
+
+Insertion - O(1)
+Removal - O(1)
+Searching - O(n)
+Access - O(n)
+
+*/
