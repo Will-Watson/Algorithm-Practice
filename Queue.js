@@ -48,3 +48,14 @@ class Queue {
     return temp.val;
   }
 }
+
+/*
+
+Queue Big O Notation
+
+Insertion - O(1)
+Removal - O(1)
+Searching - O(n)
+Access - O(n)
+
+*/
