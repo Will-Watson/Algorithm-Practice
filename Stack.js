@@ -21,3 +21,20 @@ stack.unshift('cloned out wrinkle');
 stack.shift();
 
 //another example.. but obviously push and pop is better for big O notation as its faster
+
+//stack implementation using a linked list
+
+class Stack {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+}
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
