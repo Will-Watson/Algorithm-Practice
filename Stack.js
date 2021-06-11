@@ -18,6 +18,6 @@ stack.unshift('create new file');
 stack.unshift('reszied file');
 stack.unshift('cloned out wrinkle');
 
-stack.unshift();
+stack.shift();
 
 //another example.. but obviously push and pop is better for big O notation as its faster
