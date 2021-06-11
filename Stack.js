@@ -48,6 +48,7 @@ class Stack {
       this.first = newNode;
       this.first.next = temp;
     }
-    return ++this.size;
+    this.size++;
+    return this.size;
   }
 }
