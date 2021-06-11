@@ -34,4 +34,17 @@ class Queue {
     this.size++;
     return this.size;
   }
+
+  dequeue() {
+    if (this.size === 0) {
+      return null;
+    }
+    let temp = this.first;
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    this.first = this.first.next;
+    this.size--;
+    return temp.val;
+  }
 }
