@@ -147,3 +147,7 @@ we're talking O(n);
 
 //Dept-First Search works down the tree. Vertically. 3 Specific types of DFS.
 //PreOrder, PostOrder, InOrder
+
+//--------------------------BFS VS DFS?-------------------------------
+//time complexity is about the same for both search types
+//essentially if we're talking about a wide tree, DFS is better as it takes up less space.
