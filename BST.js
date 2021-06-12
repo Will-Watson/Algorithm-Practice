@@ -48,6 +48,22 @@ class BST {
       }
     }
   }
+  //explicit statements here. A lot of redundant else.
+  find(val) {
+    if (!this.root) return false;
+    let current = this.root;
+    let found = false;
+    while (current && !found) {
+      if (val < current.val) {
+        current = current.left;
+      } else if (val > current.val) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+    return current;
+  }
 }
 
 let tree = new BST();
