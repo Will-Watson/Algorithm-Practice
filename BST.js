@@ -60,9 +60,12 @@ class BST {
         current = current.right;
       } else {
         found = true;
+        //return true;
       }
     }
+    if (!found) return false;
     return current;
+    //return false;
   }
 }
 
