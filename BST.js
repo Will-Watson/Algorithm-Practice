@@ -67,6 +67,20 @@ class BST {
     return current;
     //return false;
   }
+  //TREE TRAVERSALS
+  BFS() {
+    let data = [];
+    let queue = [];
+    let node = this.root;
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.val);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
 }
 
 let tree = new BST();
@@ -90,3 +104,13 @@ if the tree is completely one sided.. every node inserted is greater than the pr
 we're talking O(n);
 
 */
+
+//------------------------Tree Traversal------------------------------
+//visit every node once
+//Breadth-First Search
+//Depth-First Search
+
+//Breadth-First Search works across the tree. Horizontally.
+
+//Dept-First Search works down the tree. Vertically. 3 Specific types of DFS.
+//PreOrder, PostOrder
