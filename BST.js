@@ -81,6 +81,17 @@ class BST {
     }
     return data;
   }
+  DFSPreOrder() {
+    let data = [];
+    let current = this.root;
+    function traverse(node) {
+      data.push(node.val);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(current);
+    return data;
+  }
 }
 
 let tree = new BST();
@@ -113,4 +124,4 @@ we're talking O(n);
 //Breadth-First Search works across the tree. Horizontally.
 
 //Dept-First Search works down the tree. Vertically. 3 Specific types of DFS.
-//PreOrder, PostOrder
+//PreOrder, PostOrder, InOrder
