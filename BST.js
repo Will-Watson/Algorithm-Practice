@@ -84,4 +84,9 @@ Big O Notation of BST
 Insertion - O(log n)
 Searching - O(log n)
 
+not guaranteed. Average or Best^
+
+if the tree is completely one sided.. every node inserted is greater than the previous one
+we're talking O(n);
+
 */
