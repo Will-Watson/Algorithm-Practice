@@ -54,3 +54,26 @@ function constructMinHeightBst(array, bst, startIdx, endIdx) {
   constructMinHeightBst(array, bst, midIdx + 1, endIdx);
   return bst;
 }
+
+function minHeightBst2(array) {
+	return constructMinHeightBst(array, null, 0, array.length - 1);
+}
+
+function constructMinHeightBst2(array, bst, startIdx, endIdx){
+	if (endIdx < startIdx) return;
+
+
+	const midIdx = Math.floor((startIdx + endIdx) / 2);
+	const newBstNode = new BST(array[midIdx]);
+
+	if (!bst){
+		bst = newBstNode;
+	} else {
+		if (array[midIdx] < bst.value){
+			bst.left = newBstNode;
+			bst = bst.left;
+		} else {
+			bst.right = newBstNode;
+			bst = bst.right;
+		}
+	}
