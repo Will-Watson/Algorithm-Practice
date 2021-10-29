@@ -6,3 +6,11 @@ each BST node has an integer value, a left child noe, and a right child node. A 
 A BST is valid if and only if all of its noes are valid BST nodes.
 
 */
+
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
