@@ -9,3 +9,11 @@ Also, for the purpose of this question, duplicate integers will be treated as di
 Each BST node has an ineeger value, a left child node, and a right child node. A node is said to be valid BST node if and only if it satisfies the BST property: Its value is strictly greater than the values of every node to its left; its value is less than or eual to the values of every node to its right; and its children nodes are either valid BST nodes themselves or None/Null
 
 */
+
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
