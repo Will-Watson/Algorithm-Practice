@@ -44,3 +44,9 @@ function reconstructBst(preOrderTraversalValues) {
 
   return new BST(currentValue, leftSubtree, rightSubtree);
 }
+
+class TreeInfo {
+  constructor(rootIdx) {
+    this.rootIdx = rootIdx;
+  }
+}
