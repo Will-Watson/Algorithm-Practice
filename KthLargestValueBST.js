@@ -19,3 +19,12 @@ class BST {
 }
 
 //create an inOrderTraverse function in order to go through the entire tree and return a sorted array of the values within the tree.
+
+function inOrderTraverse(tree, array) {
+  if (tree) {
+    inOrderTraverse(tree.left, array);
+    array.push(tree.value);
+    inOrderTraverse(tree.right, array);
+  }
+  return array;
+}
