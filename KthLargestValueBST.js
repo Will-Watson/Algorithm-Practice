@@ -17,3 +17,5 @@ class BST {
     this.right = null;
   }
 }
+
+//create an inOrderTraverse function in order to go through the entire tree and return a sorted array of the values within the tree.
