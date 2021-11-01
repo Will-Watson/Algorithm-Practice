@@ -13,3 +13,11 @@ The inpur array will contain the values of BST nodes in the order in which these
 Each BST node has an integer value, a left child noe, and a right child node. A node is said to be valid BST node if and only if it satisfies the BST property: it's value is strictly greater than the values of every node to its left; its value is less than or equal to the values of every node to its right; and its children noes are either valid BST nodes themselves or None / null.
 
 */
+
+class BST {
+  constructor(value, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
+  }
+}
