@@ -28,3 +28,5 @@ function inOrderTraverse(tree, array) {
   }
   return array;
 }
+
+//Now in the function run by the prompt, with my sorted array of integers I can return the Kth integer by merely subtracting it from the last index in the array.
