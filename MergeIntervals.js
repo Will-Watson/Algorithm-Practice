@@ -31,3 +31,25 @@ function mergeOverlappingIntervals(array) {
   result.push([lastStart, lastEnd]);
   return result;
 }
+
+function mergeOverlappingIntervals2(array) {
+  if (array.length === 1) return array;
+  array = array.sort((a, b) => a[0] - b[0]);
+
+  let result = [];
+  let lastStart = array[0][0];
+  let lastEnd = array[0][1];
+
+  for (let i = 1; i < array.length; i++) {
+    const curr = array[i];
+    if (curr[0] <= lastEnd) {
+      lastEnd = Math.max(lastEnd, curr[1]);
+    } else {
+      result.push([lastStart, lastEnd]);
+      lastStart = curr[0];
+      lastEnd = curr[1];
+    }
+  }
+  result.push([lastStart, lastEnd]);
+  return result;
+}
