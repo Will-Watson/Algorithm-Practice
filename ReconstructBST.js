@@ -23,24 +23,35 @@ class BST {
 }
 
 function reconstructBst(preOrderTraversalValues) {
+  //base case returning after recursive calls if the given array is empty we are done.
   if (preOrderTraversalValues.length === 0) return null;
 
+  //because we know that the first integer in the array will the BST's root node we grab it here with currentValue.
   const currentValue = preOrderTraversalValues[0];
+  //creating an interchangeable variable here to keep track of where the right subtree will begin in the array.
   let rightSubtreeRootIdx = preOrderTraversalValues.length;
 
   for (let i = 1; i < preOrderTraversalValues.length; i++) {
+    //looping through the array to find the first value from the left thats greater than the root nodes value. This will be the start of the first right sub tree.
     if (preOrderTraversalValues[i] >= currentValue) {
+      //grabbing the index of the next val higher than the root.val
       rightSubtreeRootIdx = i;
+      //break here so that we stop iterating once we've found the first larger value.
       break;
     }
   }
 
+  //grabbing the recursive call of the left subtree which starts at the first index and ends right before the index of the value larger than the root val.
   const leftSubtree = reconstructBst(
     preOrderTraversalValues.slice(1, rightSubtreeRootIdx)
   );
+
+  //same here only we're grabbing the other half of the array.
   const rightSubtree = reconstructBst(
     preOrderTraversalValues.slice(rightSubtreeRootIdx)
   );
+
+  //returning the values from the bottom the while creating BSTs with their current values and their respective left and right values which will be subtrees.
 
   return new BST(currentValue, leftSubtree, rightSubtree);
 }
