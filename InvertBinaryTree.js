@@ -33,3 +33,23 @@ function invertBinaryTree(tree) {
     return null;
   }
 }
+
+//queue solution
+
+function invertBinaryTree2(tree) {
+  const queue = [tree];
+
+  while (queue.length) {
+    const current = queue.shift();
+    if (current === null) continue;
+    swapSubTrees(current);
+    queue.push(current.left);
+    queue.push(current.right);
+  }
+}
+
+function swapSubTrees(tree) {
+  const temp = tree.left;
+  tree.left = tree.right;
+  tree.right = temp;
+}
