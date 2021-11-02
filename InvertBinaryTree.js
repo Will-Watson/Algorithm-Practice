@@ -53,3 +53,18 @@ function swapSubTrees(tree) {
   tree.left = tree.right;
   tree.right = temp;
 }
+
+//simplified recursive solution
+
+function invertBinaryTree3(tree) {
+  if (!tree) return;
+  swapSubTrees2(tree);
+  invertBinaryTree3(tree.left);
+  invertBinaryTree3(tree.right);
+}
+
+function swapSubTrees2(tree) {
+  const temp = tree.left;
+  tree.left = tree.right;
+  tree.right = temp;
+}
