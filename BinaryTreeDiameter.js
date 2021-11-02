@@ -34,3 +34,7 @@ function getTreeInfo(tree) {
 
   return new TreeInfo(currentDiamter, currentHeight);
 }
+
+function binaryTreeDiameter(tree) {
+  return getTreeInfo(tree).diameter;
+}
