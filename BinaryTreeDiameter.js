@@ -7,3 +7,11 @@ A path is a collection of connected nodes in a tree, where no noed is connected 
 Each BinaryTree node has a integer value, a left child node, and a right child node. Children nodes can either be BinaryTree nodes themselves or None/null.
 
 */
+
+//recursive solution
+
+class TreeInfo {
+  constructor(diameter, height) {
+    (this.diameter = diameter), (this.height = height);
+  }
+}
