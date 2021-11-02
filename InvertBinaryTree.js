@@ -41,7 +41,7 @@ function invertBinaryTree2(tree) {
 
   while (queue.length) {
     const current = queue.shift();
-    if (current === null) continue;
+    if (!current) continue;
     swapSubTrees(current);
     queue.push(current.left);
     queue.push(current.right);
