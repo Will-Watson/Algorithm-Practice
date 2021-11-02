@@ -15,3 +15,22 @@ class TreeInfo {
     (this.diameter = diameter), (this.height = height);
   }
 }
+
+function getTreeInfo(tree) {
+  if (!tree) {
+    return new TreeInfo(0, 0);
+  }
+
+  const leftTreeInfo = getTreeInfo(tree.left);
+  const rightTreeInfo = getTreeInfo(tree.right);
+
+  const longestPathThroughRoot = leftTreeInfo.height + rightTreeInfo.height;
+  const maxDiameterSoFar = Math.max(
+    leftTreeInfo.diameter,
+    rightTreeInfo.diameter
+  );
+  const currentDiamter = Math.max(longestPathThroughRoot, maxDiameterSoFar);
+  const currentHeight = 1 + Math.max(leftTreeInfo.height, rightTreeInfo.height);
+
+  return new TreeInfo(currentDiamter, currentHeight);
+}
