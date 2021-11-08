@@ -27,3 +27,12 @@ function inOrderTraversalHelper(tree, array = []) {
   }
   return array;
 }
+
+unction findSuccessor(tree, node) {
+	if (!tree) return null;
+
+	const resultArray = inOrderTraversalHelper(tree);
+	const preSuccessor = resultArray.indexOf(node);
+
+	return resultArray[preSuccessor + 1];
+}
