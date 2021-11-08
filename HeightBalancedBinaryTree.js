@@ -38,3 +38,9 @@ function getTreeInfo(node) {
 
   return new TreeInfo(isBalanced, height);
 }
+
+function heightBalancedBinaryTree(tree) {
+  const treeInfo = getTreeInfo(tree);
+
+  return treeInfo.isBalanced;
+}
