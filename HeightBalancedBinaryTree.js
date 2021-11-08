@@ -7,3 +7,11 @@ A Binary Tree is height balanced if for each node in the tre, the difference bet
 Each BinaryTree node has an interger value, a left child node, and a right child node. Children nodes can either be BinaryTree nodes themselves or None/null.
 
 */
+
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
