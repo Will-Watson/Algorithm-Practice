@@ -15,3 +15,10 @@ class BinaryTree {
     this.right = null;
   }
 }
+
+class TreeInfo {
+  constructor(isBalanced, height) {
+    this.isBalanced = isBalanced;
+    this.height = height;
+  }
+}
