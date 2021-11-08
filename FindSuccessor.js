@@ -18,3 +18,12 @@ class BinaryTree {
     this.parent = null;
   }
 }
+
+function inOrderTraversalHelper(tree, array = []) {
+  if (tree) {
+    inOrderTraversalHelper(tree.left, array);
+    array.push(tree);
+    inOrderTraversalHelper(tree.right, array);
+  }
+  return array;
+}
