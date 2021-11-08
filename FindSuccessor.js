@@ -9,3 +9,12 @@ if a node has no successor, your function should return None/null.
 Each Binary Tree nodes has an integer value, a parent node, a left child node, and a rigth child node. Children nodes can either be Binary Tree nodes themselves or None/null.
 
 */
+
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+    this.parent = null;
+  }
+}
