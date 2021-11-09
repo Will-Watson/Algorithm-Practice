@@ -6,6 +6,10 @@ If the inpur array is empty, the function should return 0
 
 */
 
+// solution one
+// time O(n)
+// space O(n)
+
 function maxSubsetSumNoAdjacent(array) {
   if (!array.length) return 0;
 
@@ -19,6 +23,10 @@ function maxSubsetSumNoAdjacent(array) {
   }
   return maxSums[maxSums.length - 1];
 }
+
+//solution two
+//time O(n)
+//space O(1)
 
 function maxSubsetSumNoAdjacent2(array) {
   if (!array.length) return 0;
