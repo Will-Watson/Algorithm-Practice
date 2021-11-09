@@ -8,6 +8,9 @@ If it's impossible to make change for the target amount, return -1.
 
 */
 
+//time O(nd)
+//space O(n)
+
 function minNumberOfCoinsForChange(n, denoms) {
   const array = Array(n + 1).fill(Infinity);
   array[0] = 0;
