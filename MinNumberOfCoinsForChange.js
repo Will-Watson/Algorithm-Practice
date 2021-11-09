@@ -7,3 +7,16 @@ Note that you have access to an unlimited amount of coines. in other words, if t
 If it's impossible to make change for the target amount, return -1.
 
 */
+
+function minNumberOfCoinsForChange(n, denoms) {
+  const array = Array(n + 1).fill(Infinity);
+  array[0] = 0;
+  for (const denom of denoms) {
+    for (let amount in array) {
+      if (denom <= amount) {
+        array[amount] = Math.min(array[amount], 1 + array[amount - denom]);
+      }
+    }
+  }
+  return array[n] !== Infinity ? array[n] : -1;
+}
